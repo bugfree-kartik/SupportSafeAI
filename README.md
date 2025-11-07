@@ -35,7 +35,7 @@ On the user side, SafeSupportAI’s process begins with message generation, wher
 On the authority side, SafeSupportAI's system continuously monitors social media for SOS images tagged with specific hashtags. Once detected, these images are decoded to extract the hidden message using reverse steganography. The decoded text is then broken down into structured segments for efficient analysis, after which it is stored in MongoDB, where cases are organized by severity level to prioritize urgent responses.
 
 
-![alt](https://i.ibb.co/LS6195k/napkin-selection-3.png)
+![alt](https://ibb.co/gFw6vL3q)
 
 
 ![alt](https://i.ibb.co/X2GTbYc/napkin-selection-4.png)
