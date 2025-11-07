@@ -45,12 +45,12 @@ On the authority side, SafeSupportAI's system continuously monitors social media
 
 | API Route            | Description                                                 |
 |----------------------|-------------------------------------------------------------|
-| `/text-generation`   | Expands user input via AWS Bedrock                        |
+| `/text-generation`   | Expands user input via Gemini-1.5-Flash                     |
 | `/img-generation`    | Generates an image from the user’s prompt                   |
 | `/encode`            | Encodes text into the generated image                       |
 | `/decode`            | Decodes text from the image                                 |
 | `/text-decomposition`| Decomposes the decoded text into structured sections        |
-| `/save-extracted-data` | Saves the structured data in MongoDB                       |
+| `/save-extracted-data` | Saves the structured data in MongoDB                      |
 
 **Working**
 **User Side**  
@@ -102,7 +102,7 @@ Whether a user experiences **panic attacks**, **emotional exhaustion**, or simpl
   The AI’s responses are converted into **natural-sounding speech** using **ElevenLabs**’ **Text-to-Speech (TTS)** technology. The audio is base64-encoded, and synchronized with the avatar’s **lip movements**, ensuring **realistic lip-syncing**.
 
 - **Facial Expression Mapping:**  
-  **Titan Text G1 - Express** provides specific cues (e.g., **smiling**, **frowning**) that are mapped to the avatar’s morph targets. This allows the avatar to show appropriate **emotional expressions**, reflecting the user’s emotions such as **fear**, **sadness**, or **relief**.
+  **Gemini-1.5-Flash** provides specific cues (e.g., **smiling**, **frowning**) that are mapped to the avatar’s morph targets. This allows the avatar to show appropriate **emotional expressions**, reflecting the user’s emotions such as **fear**, **sadness**, or **relief**.
 
 - **Animation Management:**  
   The avatar transitions smoothly between different **animations** (e.g., from **Idle** to **Talking**), making the interaction feel natural and **engaging**, reinforcing the emotional tone of the conversation.
@@ -140,7 +140,7 @@ SafeSupportAI’s law bot is designed to provide **clear, understandable** infor
 2. Retrieve the top N most similar document chunks based on cosine similarity or another distance metric, ranked by relevance.
 
 **Response Generation :**
-1. Aggregate the retrieved document chunks and pass them to an **LLM** (e.g., Titan Text G1 - Express or a fine-tuned model) via the /text-generation API.
+1. Aggregate the retrieved document chunks and pass them to an **LLM** (Gemini-1.5-Flash) via the /text-generation API.
 2. The LLM synthesizes a coherent and **legally sound** response based on the retrieved information.
 
 **Bot Response :**
@@ -154,7 +154,8 @@ SafeSupportAI’s law bot is designed to provide **clear, understandable** infor
 
 #### **Backend :**
 - **Python 3.12 + FastAPI API development** 
-- **Amazon Bedrock**: For text and embedding generation 
+- **Gemini-1.5-Flash**: For text generation
+- **text-embedding-3-small by OpenAI**: For text embeddings generation 
 - **Amazon S3**: For Storage
 - **Pymongo**: MongoDB connection 
 - **Groq**: Fast AI Inference engine  that uses Gemma model
@@ -170,7 +171,7 @@ SafeSupportAI’s law bot is designed to provide **clear, understandable** infor
 - **Tailwind CSS** for styling 
 - **Elevenlabs** for natual sounding text to speech generation
 - **GLTF** (graphics library transmission format) for rendering 3D images on web
-- **Amazon Bedrock** and **boto3**: For LLM inference
+- **Gemini**: For LLM inference
 - **Clerk**: For authentication
 - **Typescript**: Create functional components
 
