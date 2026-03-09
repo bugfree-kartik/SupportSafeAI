@@ -5,8 +5,9 @@ import React from 'react';
 
 async function Page() {
   const user = await currentUser();
+  const isAdmin = (user?.unsafeMetadata as { isAdmin?: boolean } | undefined)?.isAdmin;
 
-  if (!user?.unsafeMetadata.isAdmin) {
+  if (!isAdmin) {
     return <div>Not authorized</div>;
   }
 

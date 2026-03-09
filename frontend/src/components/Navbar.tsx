@@ -33,7 +33,7 @@ function Navbar() {
         >
           Home
         </Link>
-        {!user?.unsafeMetadata.isAdmin && (
+        {!(user?.unsafeMetadata as { isAdmin?: boolean } | undefined)?.isAdmin && (
           <Link
             href="/create-post"
             className={`${
@@ -45,7 +45,7 @@ function Navbar() {
             Create Post
           </Link>
         )}
-        {(user?.unsafeMetadata as { isAdmin: boolean })?.isAdmin && (
+        {(user?.unsafeMetadata as { isAdmin?: boolean } | undefined)?.isAdmin && (
           <Link
             href="/dashboard"
             className={`${
