@@ -176,6 +176,10 @@ SafeSupportAI’s law bot is designed to provide **clear, understandable** infor
 - **Typescript**: Create functional components
 
 #### **Deployment**
-- **Render** for backend deployment 
-- **Vercel** for frontend deployment 
+- **Render** for backend deployment
+- **Vercel** for frontend deployment  
+
+When creating the project on Vercel/Render, use a **project name** that only contains lowercase letters, digits, and `.` `_` `-` (e.g. **support-safe-ai**).
+
+**Vercel:** The repo root has a `vercel.json` that sets `rootDirectory: "frontend"` so the Next.js app in `frontend/` is built correctly. If you already set Root Directory to `frontend` in the Vercel project settings, that works too. Add env vars in Vercel: `NEXT_PUBLIC_BACKEND_URL`, `GEMINI_API_KEY`, and (optional) `NEXT_PUBLIC_MAP_KEY`, `NEXT_PUBLIC_OPENCAGE_API_KEY`; plus Clerk keys if using auth.
 
